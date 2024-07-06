@@ -19,7 +19,7 @@ func NewChatServer(usecase interfaces.ChatUseCase) pb.ChatServer {
 		chatUseCase: usecase,
 	}
 }
-func (ad *ChatServer) GetFriendChat(ctx context.Context,req *pb.GetFriendChatRequest) (*pb.GetFriendChatResponse, error){
+func (ad *ChatServer) GetFriendChat(ctx context.Context, req *pb.GetFriendChatRequest) (*pb.GetFriendChatResponse, error) {
 	logEntry := logging.Logger().WithField("method", "GetFriendChat")
 	logEntry.Info("Processing GetFriendChat request with limit:", req.GetLimit(), "and offset:", req.GetOffSet())
 	ind, _ := time.LoadLocation("Asia/Kolkata")

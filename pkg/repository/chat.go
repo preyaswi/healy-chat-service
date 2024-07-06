@@ -44,7 +44,7 @@ func (c *chatRepository) UpdateReadAsMessage(userid, friendid string) error {
 }
 
 func (c *chatRepository) GetFriendChat(userID, friendID string, pagination models.Pagination) ([]models.Message, error) {
-	
+
 	var messages []models.Message
 	filter := bson.M{"senderid": bson.M{"$in": bson.A{userID, friendID}}, "recipientid": bson.M{"$in": bson.A{friendID, userID}}}
 	limit, _ := strconv.Atoi(pagination.Limit)

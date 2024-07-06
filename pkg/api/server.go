@@ -14,7 +14,7 @@ type Server struct {
 	listner net.Listener
 }
 
-func NewGRPCServer(cfg config.Config,server pb.ChatServer) (*Server, error) {
+func NewGRPCServer(cfg config.Config, server pb.ChatServer) (*Server, error) {
 	lis, err := net.Listen("tcp", cfg.Port)
 	if err != nil {
 		return nil, err
